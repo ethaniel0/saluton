@@ -3,7 +3,6 @@ import deta
 import os
 deta = Deta(os.environ['key'])
 
-
 Users = deta.Base("users")
 Messages = deta.Base("messages")
 
