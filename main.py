@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, make_response
 from flask_socketio import SocketIO, send, emit
 from random import choice
-from db import db, addUser, getProfilePicture, getPalUsername
+from db import db, addUser, getProfilePicture, getPalUsername, makePals
 import deta
 from deta import Deta
 import random
@@ -69,7 +69,10 @@ def signin():
     if not user:
         randomProf = random.randint(1, 15)
         addUser(name, randomProf, request.form['password'])
-
+        allAccounts = db.fetch()
+        for i in allAccounts.items:
+          if i['value'][0] == None:
+            makePals(name, i['key'])
     return resp
 
 
