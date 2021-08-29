@@ -1,0 +1,27 @@
+## Inspiration: Being multilingual is a definitive advantage in a world that becomes more connected every day. Lots of elementary schools in big cities have language immersion programs. However, most small towns don't have immersion programs. As we enter a world that is increasingly online, children in small towns have the opportunity to broaden their horizons using online platforms. There is no existing product for young kids that aims to connect them and immerse them in other languages. Our platform aims to do that.        ​
+
+## What it does
+Saluton is a modern replacement for pen pals. The goal is to connect students with other students from countries different from their own. With the advent of the internet, these valuable connections are easier to make. Saluton serves as a tool to automate these connections.
+
+Once on the page, the user can login (or create a new account if needed) and see their profile, messages from their pal, and have the option to learn languages.
+
+## How we built it
+In order to establish efficient colloboration within the team and to view and test the project, Replit was used to develop the project. The front end was made with HTML and CSS, and Python was used to interact with the database (Deta).
+
+The process used to arrive at the result was not direct. But, as is the design process,failure was common and necessary for improvement. For the project, the general page layout was first sketched on paper. It was then designed on Canva before being implemented into the project. Next, functionality and page navigation was added with Javascript. Simultaneously, database management functions were being made in Python. These were later added to the project in a way accessible to the user as the messaging and signin/login functionality were added.
+
+## Challenges we ran into
+One issue that the team came accross was in determining database structure. With so many datapoints to keep tabs on, a simple and effective method of storing information was necessary. Within the Deta database, the username was used as the key to find associated data. However, tying the data in this way lead to an extra level of complexity when it needed to be retrieved. In order to combat this,  helper methods were implemented in order to break down the problem into many smaller and simpler parts. This solution proved effective.
+
+On the front end, navigating HTML and CSS as beginners proved difficult and took a lot of time. However, with practice and guidance from more experienced group members, the team was able to successfully create the front end, and more importantly, learn a lot on the way.
+
+## Accomplishments that we're proud of:
+Making a functional website with a front end and back end is a big feat, especially when doing it for the first time. While the team did boast some experience, not all members had previously made a project of this sort. For this reason, seeing the process as a whole lead to the final website (in addition to the lower level details that made it happen) was very rewarding.
+
+On a feature basis, the team is proud of many aspects of the project. For one, given that the targeted audience is roughly elementary school through middle school aged children, the page needed to be kid friendly. In order to achieve this, the graphics were made simple and the images were fun (this includes the photos of the team, profile pictures, and many other images throughout the site). Additionally, the menus were made to be simple and easy to navigate. Another feature of note is the use of the database. The database used is hosted by Deta and is cloud-based. This ensures safekeeping of all of the data associated with Saluton. This data includes usernames, passwords, pal pairs, message conversations (and who sent each message), and profile pictures. All of this data adds up when more and more users join Saluton, so keeping the data orderly is very important. This is why the team is proud of the data management in the project.
+
+## What we learned
+For me, this was my first hackathon. Coming into this project, I did not have any experience with databases in Python — although I had used the language before. In looking to implement a Deta database into the project, I first read the documentation, then I experimented with the library, and ultimately implemented it into Saluton. -Michael 
+
+## What's next for Saluton
+For the next stage of the development of Saluton, we look to create a mobile app. This way, it will be much easier to connect while not on a computer. This will also serve to make Saluton more accessible on the go and where a PC is not available.

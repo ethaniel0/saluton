@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, make_response
 from flask_socketio import SocketIO, send, emit
 from random import choice
-from db import db, addUser, getProfilePicture, getPalUsername, makePals
+from db import db, addUser, getProfilePicture, getPalUsername, makePals, getPrevMessages, registerMessage
 import deta
 from deta import Deta
 import random
@@ -10,13 +10,7 @@ app = Flask(__name__)
 app.static_folder = 'static'
 socketio = SocketIO(app)
 
-number_list = [
-    100, 101, 200, 201, 202, 204, 206, 207, 300, 301, 302, 303, 304, 305, 307,
-    400, 401, 402, 403, 404, 405, 406, 408, 409, 410, 411, 412, 413, 414, 415,
-    416, 417, 418, 421, 422, 423, 424, 425, 426, 429, 431, 444, 450, 451, 500,
-    502, 503, 504, 506, 507, 508, 509, 510, 511, 599
-]
-
+allPeople = {}
 
 @app.after_request
 def add_header(r):
@@ -38,6 +32,8 @@ def index():
 
 @app.route('/login')
 def login():
+    name = request.cookies.get('user')
+    if name: return redirect('/profile')
     return render_template('login.html')
 
 
@@ -52,12 +48,13 @@ def profile():
 @app.route('/message')
 def message():
     name = request.cookies.get('user')
-    if not name:
-        return redirect('/')
+    if not name: return redirect('/')
     profpic = getProfilePicture(name)
     palName = getPalUsername(name)
+    if not palName: return redirect('/')
     partnerProfpic = getProfilePicture(palName)
-    return render_template('message.html', name=name, profpic=profpic)
+    
+    return render_template('message.html', name=name, profpic=profpic, palName=palName, palPic=partnerProfpic)
 
 
 @app.route('/signin', methods=['POST'])
@@ -71,7 +68,7 @@ def signin():
         addUser(name, randomProf, request.form['password'])
         allAccounts = db.fetch()
         for i in allAccounts.items:
-          if i['value'][0] == None:
+          if i['value'][0] == None and i['key'] != name:
             makePals(name, i['key'])
     return resp
 
@@ -82,22 +79,30 @@ def logout():
     resp.set_cookie('user', '', expires=0)
     return resp
 
+@socketio.on('connect')
+def connect():
+  name = request.cookies.get('user')
+  messages, senders = getPrevMessages(name)
+  data = {
+    "texts": messages,
+    "senders": senders
+  }
+  emit('connect', data)
+  allPeople[name] = request.sid
 
-@app.route('/user/', defaults={'username': None})
-@app.route('/user/<username>')
-def generate_user(username):
-    if not username:
-        username = request.args.get('username')
+@socketio.on('newMessage')
+def newMessage(text):
+  name = request.cookies.get('user')
+  palName = getPalUsername(name)
+  if (palName in allPeople):
+    emit('message', {"sent": False, "text": text}, room = allPeople[palName])
+  emit('message', {"sent": True, "text": text})
+  registerMessage(name, palName, text)
 
-    if not username:
-        return 'Sorry error something, malformed request.'
-
-    return render_template('personal_user.html', user=username)
-
-
-@app.route('/page')
-def random_page():
-    return render_template('page.html', code=choice(number_list))
-
+@socketio.on('disconnect')
+def test_disconnect():
+  name = request.cookies.get('user')
+  del allPeople[name]
+  print('Client disconnected', name)
 
 socketio.run(app, host='0.0.0.0', port=8080, debug=True)

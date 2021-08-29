@@ -9,13 +9,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/static/message.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 </head>
 
 <body class='text-center'>
-  <a href="profile" class='p-2 border-2 border-white rounded-lg absolute text-4xl hover:bg-black transition-colors' id='logout'
-	 style="color: #eb605b">Leave</a>
-     
-  <script>
-  </script>
+   <img src="/static/images/bluebackarrow.png" alt="back" class='w-24 absolute left-0 top-0 m-6 cursor-pointer text-black' id='back' onclick='window.location.href="/profile"'>
+   <main class='h-full flex flex-col'>
+     <h1 class='text-7xl text-center w-full'>{{palName}}</h1>
+     <center class='flex-grow pt-20'><div id="texts" class='flex flex-col w-1/2'></div></center>
+     <div class='pb-6'>
+       <input id='typing' type="text" class='w-2/6 border-black border-2 rounded-full text-2xl outline-none p-2 px-4' placeholder="Type something...">
+     </div>
+
+
+   </main>
+  <script src='/static/message.js'></script>
 </body>
 </html>

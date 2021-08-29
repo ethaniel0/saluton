@@ -85,6 +85,7 @@ registerMessage("bob", "lkewrghn jkersb", "no u")
 print(getPalUsername("username"))
 print(getPrevMessages("bob"))
 print(getPrevMessages("lkewrghn jkersb"))
-print(getProfilePicture("bob"))"""
+print(getProfilePicture("bob"))
+"""
 
 
