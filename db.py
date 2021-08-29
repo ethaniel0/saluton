@@ -68,6 +68,11 @@ def registerMessage(pal1, pal2, message):
     db.put([pal1, prevMessages, rsChain, getProfilePicture(pal2), getPassword(pal2)], pal2)
 
 
+# things = db.fetch()
+# print(things.items)
+# for i in things.items:
+#   db.delete(i['key'])
+
 """addUser("bob", 1, "password123")
 addUser("lkewrghn jkersb", 2, "passwordrftrsd")
 

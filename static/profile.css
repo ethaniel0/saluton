@@ -2,6 +2,10 @@
   font-family: Sensei;
   src: url(/static/Sensei-Medium.ttf);
 }
+@font-face {
+  font-family: FingerPaint;
+  src: url(/static/FingerPaint-Regular.ttf);
+}
 
 body {
   height: 100vh;
@@ -14,6 +18,28 @@ h1 {
   font-family: Sensei;
   color: #eb605b;
   position: absolute;
+}
+
+.fp {
+  font-family: FingerPaint;
+  font-size: 3rem;
+  color: green;
+}
+
+#profileText {
+  top: 19rem;
+  left: 31rem;
+  font-size: 3.5em;
+}
+
+#messagingText {
+  top: 11.6em;
+  left: calc(50% - 2em);
+}
+
+#languageText {
+  top: 6.5em;
+  left: 24.25em;
 }
 
 #loginbox {
@@ -36,4 +62,14 @@ h1 {
   right: .5em;
   top: 1.4em;
   transform: rotate(-10deg);
+}
+
+#picture {
+  top: 17rem;
+  left: 26rem;
+}
+
+#bunny {
+  top: 26em;
+  left: calc(50% - 1.1em);
 }

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: Sensei;
+  src: url(/static/Sensei-Medium.ttf);
+}
+@font-face {
+  font-family: FingerPaint;
+  src: url(/static/FingerPaint-Regular.ttf);
+}
+
+body {
+  height: 100vh;
+}
+main {
+  background-image: url("/static/images/messagebkg.png");
+  background-size: cover;
+}
+h1 {
+  font-family: Sensei;
+  color: #eb605b;
+  position: absolute;
+}
