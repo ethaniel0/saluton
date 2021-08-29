@@ -1,9 +1,9 @@
-## Inspiration: Being multilingual is a definitive advantage in a world that becomes more connected every day. Lots of elementary schools in big cities have language immersion programs. However, most small towns don't have immersion programs. As we enter a world that is increasingly online, children in small towns have the opportunity to broaden their horizons using online platforms. There is no existing product for young kids that aims to connect them and immerse them in other languages. Our platform aims to do that.        ​
+## Inspiration: Being multilingual is a definitive advantage in a world that becomes more connected every day. Lots of elementary schools in big cities have language immersion programs, giving children from that area a big advantage going into the world as a bilingual person. However, As we enter a world that is increasingly online, children in small towns have the opportunity to broaden their horizons using online platforms. There is no existing product for young kids that aims to connect them and immerse them in other languages. Our platform aims to do that.        ​
 
 ## What it does
 Saluton is a modern replacement for pen pals. The goal is to connect students with other students from countries different from their own. With the advent of the internet, these valuable connections are easier to make. Saluton serves as a tool to automate these connections.
 
-Once on the page, the user can login (or create a new account if needed) and see their profile, messages from their pal, and have the option to learn languages.
+Once on the page, the user can login (or create a new account if needed) and see their profile, messages from their pal, and have the option to learn more languages other than the target language of their pen pal.
 
 ## How we built it
 In order to establish efficient colloboration within the team and to view and test the project, Replit was used to develop the project. The front end was made with HTML and CSS, and Python was used to interact with the database (Deta).
@@ -22,6 +22,7 @@ On a feature basis, the team is proud of many aspects of the project. For one, g
 
 ## What we learned
 For me, this was my first hackathon. Coming into this project, I did not have any experience with databases in Python — although I had used the language before. In looking to implement a Deta database into the project, I first read the documentation, then I experimented with the library, and ultimately implemented it into Saluton. -Michael 
+This was also my first hackathon and before stating this project I had little to no experience with Replit, html, or css. Through completing this project I was able to develop my skills with all of them so that I can make aesthetically pleasing websites. -Lilly    
 
 ## What's next for Saluton
 For the next stage of the development of Saluton, we look to create a mobile app. This way, it will be much easier to connect while not on a computer. This will also serve to make Saluton more accessible on the go and where a PC is not available.

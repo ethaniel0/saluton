@@ -20,6 +20,8 @@ socket.on('message', parts => {
 })
 
 function makeText(sent, text){
-  console.log('TEXT', text);
-  document.getElementById('texts').innerHTML += `<p class="text self-${sent ? 'end' : 'start'} p-6 rounded-2xl text-xl bg-${sent ? 'blue-300' : 'gray-300'} mb-1" ${sent ? '' : 'style="background-color: #f59e9b"'}>${text}</p>`
+  let texts = document.getElementById('texts');
+  texts.innerHTML += `<p class="text self-${sent ? 'end' : 'start'} p-6 rounded-2xl text-xl bg-${sent ? 'blue-300' : 'gray-300'} mb-1" ${sent ? '' : 'style="background-color: #f59e9b"'}>${text}</p>`;
+  texts.scrollIntoView({ behavior: "smooth", block: "end" });
 }
+

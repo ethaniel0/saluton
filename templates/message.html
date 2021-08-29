@@ -17,7 +17,7 @@
    <img src="/static/images/bluebackarrow.png" alt="back" class='w-24 absolute left-0 top-0 m-6 cursor-pointer text-black' id='back' onclick='window.location.href="/profile"'>
    <main class='h-full flex flex-col'>
      <h1 class='text-7xl text-center w-full'>{{palName}}</h1>
-     <center class='flex-grow pt-20'><div id="texts" class='flex flex-col w-1/2'></div></center>
+     <center class='flex-grow pt-20 overflow-y-scroll'><div id="texts" class='flex flex-col w-1/2'></div></center>
      <div class='pb-6'>
        <input id='typing' type="text" class='w-2/6 border-black border-2 rounded-full text-2xl outline-none p-2 px-4' placeholder="Type something...">
      </div>

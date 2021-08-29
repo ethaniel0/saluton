@@ -105,4 +105,4 @@ def test_disconnect():
   del allPeople[name]
   print('Client disconnected', name)
 
-socketio.run(app, host='0.0.0.0', port=8080, debug=True)
+socketio.run(app, host='0.0.0.0', port=8080)
