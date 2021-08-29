@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Sensei;
+  src: url(/static/Sensei-Medium.ttf);
+}
+
+body {
+  height: 100vh;
+}
+main {
+  background-image: url("/static/images/loginbkg.png");
+  background-size: cover;
+}
+h1 {
+  font-family: Sensei;
+  color: #eb605b;
+  position: absolute;
+}
+
+#loginbox {
+  min-height: 45vh;
+  min-width: 35vw;
+}
+#loginbox img {
+  z-index: 0;
+}
+#login-inputs {
+  z-index: 1000;
+}
+
+#back {
+  top: 15em;
+  left: 8.25em;
+}
+
+#signin {
+  font-family: Sensei;
+}

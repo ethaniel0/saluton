@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Sensei;
+  src: url(/static/Sensei-Medium.ttf);
+}
+
+body {
+  height: 100vh;
+}
+main {
+  background-image: url("/static/images/indexbkg.png");
+  background-size: cover;
+}
+main h1 {
+  font-family: Sensei;
+  color: #eb605b;
+}
+main p {
+  color: #90b8e4;
+  font-family: Lato;
+  font-weight: bold;
+}
+
+#login {
+  font-family: Sensei;
+  right: 0.8em;
+  top: 1.7em;
+  transform: rotate(10deg);
+}
+
+#ethan {
+  bottom: 20vh;
+  left: 5em;
+}
+#michael {
+  bottom: 3em;
+  left: 33vw;
+}
+#lilly {
+  bottom: 30vh;
+  right: 5em;
+}

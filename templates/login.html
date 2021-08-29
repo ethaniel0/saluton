@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Saluton</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.8/tailwind.min.css" integrity="sha512-sP93un/6HzFSfkHZ4jCTbf4XgiMldakhz+/ibX+8sk6fVvkWvoGhqfFeVlFoY6aEPakF6zI4XvVGF5+t/ahHQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/login.css">
+	</head>
+	<body class='text-center'> 
+    <h1 class='text-8xl w-full text-center mt-6'>Login</h1>
+    <img src="/static/images/backarrow.png" alt="back" class='w-28 absolute cursor-pointer' id='back' onclick='window.location.href="/"'>
+		<main class='flex justify-center h-full items-center flex-col'>
+      <form id='loginbox' class='text-xl text-white relative' action='/signin' method='POST'>
+        <img src='/static/images/loginbox.png' class='absolute top-0 left-0 w-full h-full hover:bg-black transition-colors'>
+        <div id='login-inputs' class='absolute top-0 left-0 w-full h-full p-8 pt-16 text-left'>
+          <h2 class='text-2xl'>Username</h2>
+          <input name="username" type="text" class='bg-transparent border-b-2 border-black outline-none w-11/12 mb-4'>
+
+          <h2 class='text-2xl'>Password</h2>
+          <input name="password" type="password" class='bg-transparent border-b-2 border-black outline-none w-11/12 mb-4'>
+
+          <h2 class='text-2xl hidden' id='hpassconf'>Confirm Password</h2>
+          <input id='passConfirm' name="passConfirm" type="password" class='bg-transparent border-b-2 border-black outline-none w-11/12 mb-8 hidden'>
+
+          <p id='switch' class='w-full text-center'> Don't have an account? <a class='onLogin text-blue-600 cursor-pointer' onclick="toggle()">Sign Up</a></p>
+        </div>
+
+        <button id='submit'></button>
+      </form>
+      <center class='mt-8'>
+        <div class='inline-block w-52 h-36 relative flex justify-center items-center' style='background-size: cover;'>
+          <img src="/static/images/oval.png" alt="oval" class='absolute left-0 top-0 w-full h-full z-0'>
+          <button class='p-2 text-5xl  text-white absolute h-full w-full flex justify-center items-center top-0 left-0 hover:text-black transition-colors' id='signin' onclick='document.getElementById("submit").click()'>Sign In</button>
+        </div>
+      </center>
+    </main>
+    <script src='/static/login.js'></script>
+	</body>
+</html>
